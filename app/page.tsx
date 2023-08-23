@@ -72,8 +72,8 @@ export default function Home() {
     const [company, setCompany] = useState(companydata[0].Name);
 
     return (
-        <main className="flex flex-row justify-center p-5 mx-48">
-            <div className="w-2/5">
+        <main className="flex flex-col md:flex-row justify-center p-5 mx-5">
+            <div className="w-full lg:w-2/5">
                 {companydata.map((company) => (
                     <button
                         key={company.id}
@@ -115,12 +115,12 @@ export default function Home() {
                                     </span>
                                 </div>
                             </div>
-                            <div className="rounded-md border text-card-foreground p-2 text-sm text-emerald-500 font-bold bg-emerald-100 border-emerald-100">
+                            <div className="text-[5px] rounded-md border text-card-foreground p-2 sm:text-sm text-emerald-500 font-bold bg-emerald-100 border-emerald-100">
                                 {company.Tag}
                             </div>
                         </div>
                         <Separator className="my-3" />
-                        <div className="flex items-start">
+                        <div className="flex items-start flex-wrap">
                             {company.Skills.map((skill, i) => (
                                 <span
                                     key={i}
@@ -134,7 +134,7 @@ export default function Home() {
                 ))}
             </div>
 
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm mb-2 p-2 ml-2 w-3/5 flex">
+            <div className="w-full lg:w-3/5 lg:block hidden rounded-lg border bg-card text-card-foreground shadow-sm mb-2 p-2 ml-0 lg:ml-2">
                 <h1 className="font-bold">{company}</h1>
             </div>
         </main>
